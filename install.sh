@@ -1,10 +1,10 @@
 #!/bin/bash
-rm install.sh
+rm -rf install*
 #Database Details
 dbhost='139.162.4.104';
-dbuser='corpovpn_vnj';
-dbpass='corpovpn_vnj';
-dbname='corpovpn_vnj';
+dbuser='corpovpn_jone';
+dbpass='corpovpn_jone';
+dbname='corpovpn_jone';
 dbport='3306';
 apt-get update -y
 sudo timedatectl set-timezone Asia/ Riyadh
@@ -71,10 +71,7 @@ script-security 2
 cipher AES-128-CBC
 tcp-nodelay
 up /etc/openvpn/update-resolv-conf                                                                                      
-down /etc/openvpn/update-resolv-conf
-log server_log
-status /var/www/html/stat/tcpstatus.txt
-ifconfig-pool-persist /var/www/html/stat/ipp.txt' > /etc/openvpn/server.conf
+down /etc/openvpn/update-resolv-conf' > /etc/openvpn/server.conf
 
 echo 'mode server 
 tls-server 
@@ -106,10 +103,7 @@ cipher AES-128-CBC
 tcp-nodelay
 script-security 2
 up /etc/openvpn/update-resolv-conf                                                                                      
-down /etc/openvpn/update-resolv-conf
-log server_log
-status /var/www/html/stat/udpstatus.txt
-ifconfig-pool-persist /var/www/html/stat/udpipp.txt' > /etc/openvpn/server2.conf
+down /etc/openvpn/update-resolv-conf' > /etc/openvpn/server2.conf
 
 
 cat << EOF > /etc/openvpn/easy-rsa/keys/ca.crt
@@ -288,13 +282,11 @@ FXQ/AVkvxYaO8pFI2Vh+CNMk7Vvi8d3DTayvoL2HTgFi+OIEbiiE/Nzryu+jDGc7
 79FkBHWOa/7eD2nFrHScUJcwWiSevPQjQwIBAg==
 -----END DH PARAMETERS-----
 EOF
-
-chmod 755 /etc/openvpn/script/connect.sh
-chmod 755 /etc/openvpn/script/disconnect.sh
-chmod +x /etc/openvpn/script/auth_vpn
+chmod 755 /etc/openvpn/easy-rsa/keys/*
 chmod 755 /etc/openvpn/server.conf
 chmod 755 /etc/openvpn/server2.conf
-chmod 755 /etc/openvpn/script/auth_vpn
+chmod 755 /etc/openvpn/script/*
+chmod 755 /etc/openvpn/server/*
 touch /var/www/html/stat/udpstatus.txt
 touch /var/www/html/stat/tcpstatus.txt
 chmod 755 /var/www/html/stat/*
