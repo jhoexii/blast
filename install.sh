@@ -335,7 +335,7 @@ iptables -t nat -A POSTROUTING -s 172.30.0.0/16 -o enp1s0 -j SNAT --to-source `c
 sudo apt install debconf-utils -y
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
-useradd -p $(openssl passwd -1 alaminalamin) sandok -ou 0 -g 0
+#useradd -p $(openssl passwd -1 codeph) jhoe -ou 0 -g 0
 sudo apt-get install iptables-persistent -y
 iptables-save > /etc/iptables/rules.v4 
 ip6tables-save > /etc/iptables/rules.v6
