@@ -32,3 +32,4 @@ up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
 EOF
 service openvpn restart
+echo "upgrade complete"
