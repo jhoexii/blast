@@ -4,10 +4,10 @@ ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 proxy_ip='157.245.200.58/tesla';
 open_Link='jhoelsoft.net/content';
 #Database Details
-dbhost='139.162.4.104';
-dbuser='corpovpn_jone';
-dbpass='corpovpn_jone';
-dbname='corpovpn_jone';
+dbhost='mysql2.blazingfast.io';
+dbuser='teslavpn_jone';
+dbpass='teslavpn_jone';
+dbname='teslavpn_jone';
 dbport='3306';
 dbport='3306';
 RED='\033[01;31m';
